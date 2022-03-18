@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev.finance$</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <img src="./assets/assets/logo.svg" alt="Logo Dev Finances" />
+    </header>
+
+    <main class="container">
+      <section id="balance">
+        <h2 class="src-only">Balanço</h2>
+        <div class="card">
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/assets/income.svg" alt="imagem de entradas" />
+          </h3>
+          <p id="incomedisplay">R$ 0,00</p>
+        </div>
+        <div class="card">
+          <h3>
+            <span>Saidas</span>
+            <img src="./assets/assets/expense.svg" alt="imagem de saidas" />
+          </h3>
+          <p id="expensedisplay">R$ 0,00</p>
+        </div>
+        <div class="card green">
+          <h3>
+            <span>Total</span>
+            <img
+              src="./assets/assets/total.svg"
+              alt="imagem do total das entradas e saidas"
+            />
+          </h3>
+          <p id="totaldisplay">R$ 0,00</p>
+        </div>
+      </section>
+
+      <section id="transaction">
+        <h2 class="src-only">Transações</h2>
+
+        <button class="open-modal" onclick="modal.open()">
+          <a href="#" class="button new">+ Nova transação</a>
+        </button>
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+          <div class="header-form">
+            <h2>Nova Transação</h2>
+            <button class="button-modal" onclick="modal.close()">x</button>
+          </div>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label for="description" class="src-only">Descrição</label> <br />
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Descrição"
+              />
+            </div>
+            <div class="input-group">
+              <label for="amount" class="src-only">Valor</label> <br />
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="0,0"
+              />
+              <small class="help"
+                >Use o sinal - (negativo) para despesas e , (vírgula) para casas
+                decimais</small
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="date" class="src-only">Descrição</label> <br />
+              <input type="date" id="date" name="date" placeholder="Data" />
+            </div>
+
+            <div class="input-group actions">
+              <a href="" class="button cancel">Cancelar</a>
+              <button type="submit" class="button-save">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>dev.finance$, re-created by nioritos from RocketSeat</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
